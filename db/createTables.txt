@@ -1,0 +1,39 @@
+Drop table if exists Message;
+Drop table if exists Users;
+CREATE TABLE Users (
+    idUser INT AUTO_INCREMENT,
+    username varchar(255) NOT NULL UNIQUE,
+    password varchar(255) NOT NULL,
+   PRIMARY KEY (idUser)
+);
+CREATE TABLE Message (
+    idMsg INT AUTO_INCREMENT,
+    idUser INT,
+    content varchar(255),
+    dateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (idMsg),
+   FOREIGN KEY (idUser) REFERENCES Users(idUser)
+);
+INSERT INTO Users ( username, password) VALUES ( 'Ricardo', 'pass123');
+INSERT INTO Users ( username, password) VALUES ( 'Ana', 'pass123');
+INSERT INTO Users ( username, password) VALUES ( 'Daniel', 'pass123');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem1');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem2');
+INSERT INTO Message ( idUser, content) VALUES ( 3, 'texto da mensagem3');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem4');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem5');
+INSERT INTO Message ( idUser, content) VALUES ( 2, 'texto da mensagem6');
+INSERT INTO Message ( idUser, content) VALUES ( 2, 'texto da mensagem7');
+INSERT INTO Message ( idUser, content) VALUES ( 3, 'texto da mensagem8');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem9');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem10');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem11');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem12');
+INSERT INTO Message ( idUser, content) VALUES ( 3, 'texto da mensagem13');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem14');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem15');
+INSERT INTO Message ( idUser, content) VALUES ( 2, 'texto da mensagem16');
+INSERT INTO Message ( idUser, content) VALUES ( 2, 'texto da mensagem17');
+INSERT INTO Message ( idUser, content) VALUES ( 3, 'texto da mensagem18');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem19');
+INSERT INTO Message ( idUser, content) VALUES ( 1, 'texto da mensagem20');
